@@ -48,3 +48,17 @@ export default tseslint.config({
   },
 })
 ```
+
+## Further steps
+
+Install `tailwindcss`:
+
+```shell
+npm install -D tailwindcss postcss autoprefixer
+```
+
+Initialize `tailwindcss`:
+
+```shell
+npx tailwind init -p
+```

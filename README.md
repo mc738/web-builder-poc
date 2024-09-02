@@ -71,5 +71,5 @@ Steps [here](https://ui.shadcn.com/docs/installation/vite)
 
 Add craft.js:
 
-Steps [here]()https://craft.js.org/docs/guides/basic-tutorial
+Steps [here](https://craft.js.org/docs/guides/basic-tutorial)
 

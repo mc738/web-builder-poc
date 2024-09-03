@@ -6,7 +6,7 @@ interface  ButtonComponentProps {
     color: string,
 }
 
-export const buttonComponent = ({size, variant, color, children}) => {
+export const ButtonComponent = ({size, variant, color, children}) => {
     return (
         <Button>
             {children}

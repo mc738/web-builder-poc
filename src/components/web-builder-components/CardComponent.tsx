@@ -1,4 +1,3 @@
-import React from 'react';
 import {Card} from "@/components/ui/card.tsx";
 import {ContainerComponent} from "@/components/web-builder-components/ContainerComponent.tsx";
 import {TextComponent} from "@/components/web-builder-components/TextComponent.tsx";
@@ -22,7 +21,6 @@ export const CardComponent = ({background, padding}: CardComponentProps) => {
                         Learn more
                     </ButtonComponent>
                 </div>
-
             </ContainerComponent>
         </Card>)
 }

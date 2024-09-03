@@ -1,17 +1,17 @@
+import React from "react";
 import {Button} from "@/components/ui/button.tsx";
 
-interface  ButtonComponentProps {
-    size: string,
-    variant: string,
+interface ButtonComponentProps {
+    size: "default" | "sm" | "lg" | "icon" | null | undefined,
+    variant: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link" | null | undefined,
     color: string,
 }
 
-export const ButtonComponent = ({size, variant, color, children}) => {
+export const ButtonComponent = ({size, variant, color, children}: React.PropsWithChildren<ButtonComponentProps>) => {
     return (
-        <Button>
+        <Button size={size} variant={variant} color={color}>
             {children}
-
-            </Button>
+        </Button>
     )
 
 }

@@ -1,14 +1,13 @@
 import './App.css'
-import {Button} from "@/components/ui/button.tsx";
+//import {Button} from "@/components/ui/button.tsx";
+//import React from "react";
+import {WebBuilderEditor} from "@/components/editor";
 
 function App() {
   return (
-      <div>
-          <h1 className="text-4xl text-blue-500">
-              Hello, World!
-          </h1>
-          <Button variant={"outline"}>Click me</Button>
-      </div>
+      <>
+          <WebBuilderEditor></WebBuilderEditor>
+      </>
   )
 }
 

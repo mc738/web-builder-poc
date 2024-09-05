@@ -26,7 +26,21 @@ CardBody.craft = {
     }
 }
 
-export const CardBottom = ({})
+export const CardBottom = ({children}: PropsWithChildren) => {
+    const {connectors: {connect}} = useNode();
+
+    return (
+        <div ref={ref => connect(ref!)}>
+            {children}
+        </div>
+    )
+}
+
+CardBottom.craft = {
+    rules: {
+        canMoveIn: (incomingNodes: Node[]) => incomingNodes.every(incomingNode => incomingNode.data.type === ButtonComponent),
+    }
+}
 
 export const CardComponent = ({background, padding}: CardComponentProps) => {
     return (
@@ -39,21 +53,19 @@ export const CardComponent = ({background, padding}: CardComponentProps) => {
             <CardContent>
                 <ContainerComponent background={background} padding={padding} margin={'0'}>
                     <div className='text-only'>
-                        <Element id="tesx">
+                        <Element id="tesx" is={CardBody}>
                             <TextComponent text="Title" fontSize="20px"/>
                             <TextComponent text="Description" fontSize="16px"/>
                         </Element>
-
                     </div>
                 </ContainerComponent>
             </CardContent>
             <CardFooter>
-                <Element id="buttons" canvas>
+                <Element id="buttons" is={CardBottom} canvas>
                     <ButtonComponent size="sm" variant="outline" color="primary">
                         Learn more
                     </ButtonComponent>
                 </Element>
             </CardFooter>
-
         </Card>)
 }

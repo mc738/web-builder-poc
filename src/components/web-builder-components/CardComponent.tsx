@@ -52,12 +52,10 @@ export const CardComponent = ({background, padding}: CardComponentProps) => {
             </CardHeader>
             <CardContent>
                 <ContainerComponent background={background} padding={padding} margin={'0'}>
-                    <div className='text-only'>
-                        <Element id="tesx" is={CardBody}>
-                            <TextComponent text="Title" fontSize="20px"/>
-                            <TextComponent text="Description" fontSize="16px"/>
-                        </Element>
-                    </div>
+                    <Element id="text" is={CardBody} canvas>
+                        <TextComponent text="Title" fontSize="20px"/>
+                        <TextComponent text="Description" fontSize="16px"/>
+                    </Element>
                 </ContainerComponent>
             </CardContent>
             <CardFooter>

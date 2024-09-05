@@ -2,12 +2,31 @@ import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} f
 import {ContainerComponent} from "@/components/web-builder-components/ContainerComponent.tsx";
 import {TextComponent} from "@/components/web-builder-components/TextComponent.tsx";
 import {ButtonComponent} from "@/components/web-builder-components/ButtonComponent.tsx";
-import {Element} from "@craftjs/core";
+import {Element, useNode, Node} from "@craftjs/core";
+import {PropsWithChildren} from "react";
 
 interface CardComponentProps {
     background: string
     padding: string
 }
+
+export const CardBody = ({children}: PropsWithChildren) => {
+    const {connectors: {connect}} = useNode();
+
+    return (
+        <div ref={ref => connect(ref!)} className="text-only">
+            {children}
+        </div>
+    )
+}
+
+CardBody.craft = {
+    rules: {
+        canMoveIn: (incomingNodes: Node[]) => incomingNodes.every(incomingNode => incomingNode.data.type === TextComponent),
+    }
+}
+
+export const CardBottom = ({})
 
 export const CardComponent = ({background, padding}: CardComponentProps) => {
     return (
@@ -21,8 +40,8 @@ export const CardComponent = ({background, padding}: CardComponentProps) => {
                 <ContainerComponent background={background} padding={padding} margin={'0'}>
                     <div className='text-only'>
                         <Element id="tesx">
-                            <TextComponent text="Title" fontSize="20px" />
-                            <TextComponent text="Description" fontSize="16px" />
+                            <TextComponent text="Title" fontSize="20px"/>
+                            <TextComponent text="Description" fontSize="16px"/>
                         </Element>
 
                     </div>

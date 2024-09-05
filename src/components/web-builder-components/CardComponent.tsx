@@ -1,7 +1,8 @@
-import {Card} from "@/components/ui/card.tsx";
+import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/ui/card.tsx";
 import {ContainerComponent} from "@/components/web-builder-components/ContainerComponent.tsx";
 import {TextComponent} from "@/components/web-builder-components/TextComponent.tsx";
 import {ButtonComponent} from "@/components/web-builder-components/ButtonComponent.tsx";
+import {Element} from "@craftjs/core";
 
 interface CardComponentProps {
     background: string
@@ -11,16 +12,29 @@ interface CardComponentProps {
 export const CardComponent = ({background, padding}: CardComponentProps) => {
     return (
         <Card>
-            <ContainerComponent background={background} padding={padding} margin={'0'}>
-                <div className='text-only'>
-                    <TextComponent text="Title" fontSize="20px" />
-                    <TextComponent text="Description" fontSize="16px" />
-                </div>
-                <div className='buttons-only'>
+            <CardHeader>
+                <CardTitle>Card title</CardTitle>
+                <CardDescription>card</CardDescription>
+
+            </CardHeader>
+            <CardContent>
+                <ContainerComponent background={background} padding={padding} margin={'0'}>
+                    <div className='text-only'>
+                        <Element id="tesx">
+                            <TextComponent text="Title" fontSize="20px" />
+                            <TextComponent text="Description" fontSize="16px" />
+                        </Element>
+
+                    </div>
+                </ContainerComponent>
+            </CardContent>
+            <CardFooter>
+                <Element id="buttons" canvas>
                     <ButtonComponent size="sm" variant="outline" color="primary">
                         Learn more
                     </ButtonComponent>
-                </div>
-            </ContainerComponent>
+                </Element>
+            </CardFooter>
+
         </Card>)
 }

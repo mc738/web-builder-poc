@@ -1,5 +1,6 @@
 import React from "react";
 import {Button} from "@/components/ui/button.tsx";
+import {useNode} from "@craftjs/core";
 
 interface ButtonComponentProps {
     size: "default" | "sm" | "lg" | "icon" | null | undefined,
@@ -8,8 +9,9 @@ interface ButtonComponentProps {
 }
 
 export const ButtonComponent = ({size, variant, color, children}: React.PropsWithChildren<ButtonComponentProps>) => {
+    const { connectors: {connect, drag} } = useNode();
     return (
-        <Button size={size} variant={variant} color={color}>
+        <Button ref={ ref => connect(drag(ref!))} size={size} variant={variant} color={color}>
             {children}
         </Button>
     )

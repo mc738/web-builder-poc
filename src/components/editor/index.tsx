@@ -6,12 +6,16 @@ import {Editor, Frame, Resolver} from "@craftjs/core";
 import {TextComponent} from "@/components/web-builder-components/TextComponent.tsx";
 import {ContainerComponent} from "@/components/web-builder-components/ContainerComponent.tsx";
 import {ButtonComponent} from "@/components/web-builder-components/ButtonComponent.tsx";
+import {CardBody, CardBottom, CardComponent} from "@/components/web-builder-components/CardComponent.tsx";
 
 const blocks: Resolver = {
     PageView,
     TextComponent,
     ButtonComponent,
-    ContainerComponent
+    ContainerComponent,
+    CardComponent,
+    CardBody,
+    CardBottom,
 }
 
 export const WebBuilderEditor = () => {

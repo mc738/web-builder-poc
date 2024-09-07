@@ -58,7 +58,7 @@ export const LeftBar = () => {
                                         background=""
                                         padding=""
                                         margin=""></ContainerComponent>)}
-                            variant="outline"
+                            variant="ghost"
                             color="">
                             <Square></Square>
                         </Button>

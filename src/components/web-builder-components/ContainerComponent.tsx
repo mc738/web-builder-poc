@@ -11,7 +11,7 @@ export const ContainerComponent = ({ background = "", padding = '0px', margin = 
     const { connectors: {connect, drag} } = useNode();
 
     return (
-        <div ref={ref=> connect(drag(ref!))} className="w-full p-4" style={{margin: margin, background, padding}}>
+        <div ref={ref=> connect(drag(ref!))} className="w-full p-4 border-l" style={{margin: margin, background, padding}}>
             {children}
         </div>
     )

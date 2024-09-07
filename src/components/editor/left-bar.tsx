@@ -2,6 +2,7 @@ import {Button} from "@/components/ui/button.tsx";
 import {Type} from "lucide-react";
 import {useEditor} from "@craftjs/core";
 import {TextComponent} from "@/components/web-builder-components/TextComponent.tsx";
+import {ButtonComponent} from "@/components/web-builder-components/ButtonComponent.tsx";
 
 export const LeftBar = () => {
     const {connectors/*, query*/} = useEditor();
@@ -12,6 +13,12 @@ export const LeftBar = () => {
                     variant="ghost"
                     size="icon">
                 <Type/>
+            </Button>
+            <Button ref={ref => connectors.create(ref!, <ButtonComponent size="sm" variant="default"
+                                                                         color=""></ButtonComponent>)}
+                    variant="ghost"
+                    size="sm">
+
             </Button>
         </aside>
     )

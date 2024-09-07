@@ -14,8 +14,12 @@ export const LeftBar = () => {
                     size="icon">
                 <Type/>
             </Button>
-            <Button ref={ref => connectors.create(ref!, <ButtonComponent size="sm" variant="default"
-                                                                         color=""></ButtonComponent>)}
+            <Button ref={ref =>
+                connectors.create(ref!,
+                    <ButtonComponent
+                        size="sm"
+                        variant="default"
+                        color=""></ButtonComponent>)}
                     variant="ghost"
                     size="sm">
 

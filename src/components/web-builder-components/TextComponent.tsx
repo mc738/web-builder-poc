@@ -80,6 +80,11 @@ const TextSettings = () => {
 }
 
 TextComponent.craft = {
+    props: {
+        text: "Hello, World!",
+        fontSize: "1",
+        fontSizeUnits: "rem"
+    },
     rules: {
         canDrag: (node: Node) => node.data.props.text !== "drag"
     },

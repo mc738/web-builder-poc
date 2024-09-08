@@ -53,8 +53,8 @@ export const CardComponent = ({background, padding}: CardComponentProps) => {
             <CardContent>
                 <ContainerComponent background={background} padding={padding} margin={'0'}>
                     <Element id="text" is={CardBody} canvas>
-                        <TextComponent text="Title" fontSize="20px"/>
-                        <TextComponent text="Description" fontSize="16px"/>
+                        <TextComponent text="Title" fontSize="20" fontSizeUnits="px" />
+                        <TextComponent text="Description" fontSize="16" fontSizeUnits="px" />
                     </Element>
                 </ContainerComponent>
             </CardContent>

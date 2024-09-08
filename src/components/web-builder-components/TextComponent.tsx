@@ -1,6 +1,6 @@
 import {Node, useNode} from '@craftjs/core';
 import ContentEditable from "react-contenteditable";
-import React, {useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {Select, SelectContent, SelectItem} from "@/components/ui/select.tsx";
 import {Label} from "@/components/ui/label.tsx";
 import {Input} from "@/components/ui/input.tsx";

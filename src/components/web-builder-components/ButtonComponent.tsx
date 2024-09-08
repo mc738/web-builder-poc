@@ -9,11 +9,10 @@ interface ButtonComponentProps {
 }
 
 export const ButtonComponent = ({size, variant, color, children}: React.PropsWithChildren<ButtonComponentProps>) => {
-    const { connectors: {connect, drag} } = useNode();
+    const {connectors: {connect, drag}} = useNode();
     return (
-        <Button ref={ ref => connect(drag(ref!))} size={size} variant={variant} color={color}>
+        <Button ref={ref => connect(drag(ref!))} size={size} variant={variant} color={color}>
             {children}
         </Button>
     )
-
 }

@@ -9,21 +9,21 @@ interface TextComponentProps {
 }
 
 export const TextComponent = ({text, fontSize}: TextComponentProps) => {
-    const {connectors: {connect, drag}, hasSelectedNode, /*hasDraggedNode,*/ actions: {setProp}} = useNode((state) => ({
-        hasSelectedNode: state.events.selected,
-        hasDraggedNode: state.events.dragged,
+    const {connectors: {connect, drag}, isActive, actions: {setProp}} = useNode((state) => ({
+        isActive: state.events.selected
     }));
 
     const [editable, setEditable] = useState(false);
 
     useEffect(() => {
-        !hasSelectedNode && setEditable(false);
-    }, [hasSelectedNode]);
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+        !isActive && setEditable(false);
+    }, [isActive]);
 
     return (
         <div
             ref={ref => connect(drag(ref!))}
-            onClick={_ => setEditable(true)}>
+            onClick={() => setEditable(true)}>
             <ContentEditable
                 html={text}
                 onChange={e =>
@@ -42,3 +42,4 @@ TextComponent.craft = {
         canDrag: (node: Node) => node.data.props.text !== "drag"
     }
 }
+

@@ -1,10 +1,9 @@
 import {Node, useNode} from '@craftjs/core';
 import ContentEditable from "react-contenteditable";
 import {useEffect, useState} from "react";
-import {Select, SelectContent, SelectItem} from "@/components/ui/select.tsx";
+import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select.tsx";
 import {Label} from "@/components/ui/label.tsx";
 import {Input} from "@/components/ui/input.tsx";
-import {SelectTrigger, SelectValue} from "@radix-ui/react-select";
 
 
 interface TextComponentProps {
@@ -52,27 +51,31 @@ const TextSettings = () => {
     return (
         <>
             <Label>Font size</Label>
-            <div className="flex flex-col">
-                <Input
-                    type="number"
-                    value={fontSize}
-                    onChange={e => {
-                        setProp((props: TextComponentProps) => props.fontSize = e.target.value);
-                    }}></Input>
-                <Select
-                    value={fontSizeUnits}
-                    onValueChange={e => {
-                        setProp((props: TextComponentProps) => props.fontSizeUnits = e);
-                    }}>
-                    <SelectTrigger>
-                        <SelectValue placeholder="Units"/>
-                    </SelectTrigger>
-                    <SelectContent>
-                        <SelectItem value="px">px</SelectItem>
-                        <SelectItem value="em">em</SelectItem>
-                        <SelectItem value="rem">rem</SelectItem>
-                    </SelectContent>
-                </Select>
+            <div className="flex flex-row">
+                <div className="w-3/4">
+                    <Input
+                        type="number"
+                        value={fontSize}
+                        onChange={e => {
+                            setProp((props: TextComponentProps) => props.fontSize = e.target.value);
+                        }}></Input>
+                </div>
+                <div className="w-1/4">
+                    <Select
+                        value={fontSizeUnits}
+                        onValueChange={e => {
+                            setProp((props: TextComponentProps) => props.fontSizeUnits = e);
+                        }}>
+                        <SelectTrigger>
+                            <SelectValue placeholder="Units"/>
+                        </SelectTrigger>
+                        <SelectContent>
+                            <SelectItem value="px">px</SelectItem>
+                            <SelectItem value="em">em</SelectItem>
+                            <SelectItem value="rem">rem</SelectItem>
+                        </SelectContent>
+                    </Select>
+                </div>
             </div>
         </>
     )

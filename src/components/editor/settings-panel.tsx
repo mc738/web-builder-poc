@@ -23,8 +23,10 @@ export const SettingsPanel = () => {
         <div>
             <div className="grid grid-cols-1">
                 <div className="items-center">
-                    <h1>Selected</h1>
-                    <Badge></Badge>
+                    <div className="flex flex-row">
+                        <h1>Selected</h1>
+                        <Badge>{selected.name}</Badge>
+                    </div>
                     {selected.settings && React.createElement(selected.settings)}
                 </div>
             </div>
